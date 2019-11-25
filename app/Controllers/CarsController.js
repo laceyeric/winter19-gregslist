@@ -23,6 +23,7 @@ function _drawCars() {
 export default class CarsController {
   constructor() {
     console.log("Hello from car controller")
+    _store.subscribe("cars",_drawCars)
     _drawCars()
   }
 
@@ -37,7 +38,6 @@ export default class CarsController {
     }
 
     _carService.addCar(newCar)
-    _drawCars()
     formData.reset()
 
     console.log(event.target.make.value)
@@ -45,7 +45,6 @@ export default class CarsController {
 
   delortCar(carIndex) {
     _carService.delortCar(carIndex)
-    _drawCars()
   }
 
 }
