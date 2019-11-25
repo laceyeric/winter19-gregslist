@@ -23,7 +23,8 @@ function _drawCars() {
 export default class CarsController {
   constructor() {
     console.log("Hello from car controller")
-    _store.subscribe("cars",_drawCars)
+    // 5. when subscribe is triggered, state's key value cars and a dormant _drawCars fn will be passed in this case.  Invoking _drawCars in order to write to screen from controller. -step 6 in store- 
+    _store.subscribe("cars", _drawCars)
     _drawCars()
   }
 
